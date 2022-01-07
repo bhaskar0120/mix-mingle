@@ -1,0 +1,11 @@
+{
+    "files":[
+        "./index.ts"
+    ],
+    "compilerOptions": {
+        "module": "commonjs"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
