@@ -18,5 +18,5 @@
 bind:value={textValue} 
 on:keypress={eventHandler} 
 bind:this={textBox} type="text" 
-class="outline-indigo-700 rounded-full w-8/12 h-12 border-none ml-2 mt-4 p-2" 
+class="outline-indigo-700 rounded-full w-8/12 h-12 border-none ml-2 p-2" 
 placeholder="Text..">

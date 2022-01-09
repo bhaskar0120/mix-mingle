@@ -23,6 +23,8 @@
     class:user={isUser}
     class:other={!isUser}
     >
-
-        {message}
+    <div>{message}</div>
+    <div class="text-gray-600 text-xs"
+    class:text-right={isUser}
+    >21:53</div>
 </div>
