@@ -8,7 +8,8 @@
     "dev": "rollup -c -w",
     "start": "live-server public 8080 && ",
     "css-watch": "tailwindcss -o public/global.css -i public/tailwind.css --watch",
-    "css": "tailwindcss -o public/global.css -i public/tailwind.css "
+    "css": "tailwindcss -o public/global.css -i public/tailwind.css ",
+    "css-build": "tailwindcss -o public/global.css -i public/tailwind.css --minify"
   },
   "repository": {
     "type": "git",
