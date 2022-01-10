@@ -4,7 +4,8 @@
   "description": "A simple random chat site",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c & npm run css-build & tsc & node index.js",
+    "build-svelte" : "rollup -c",
     "dev": "rollup -c -w",
     "start": "live-server public 8080 && ",
     "css-watch": "tailwindcss -o public/global.css -i public/tailwind.css --watch",

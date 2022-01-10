@@ -21,9 +21,14 @@ After cloning the repo,
 ### How to build the release version
  After cloning the repo,
  - Make sure dependencies are installed, if not  `npm install`
+ 
+ Quickly build the release version using  `npm run build`
+
+ Or use the following command to build the release version step by step
+
  - Compile index.ts _(read note 2)_  `tsc`
  - Generate production css  `npm run css-build`
- - Generate production svelte files  `npm run build`
+ - Generate production svelte files  `npm run build-svelte`
  - Start the server  `node index.js`
 ----------
 
