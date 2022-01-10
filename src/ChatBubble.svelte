@@ -1,11 +1,9 @@
 <script>
     // This is the chat bubble for every message
-    // Boolean to check if the chat is sent by the user or the other person
-    let isUser ;
-    // Random boolean generator
-    isUser = Math.random() >= 0.5;
+    export let isUser ;
     // String to hold the message
     export let message = "";
+    export let time;
 </script>
 <style>
     .user{
@@ -26,5 +24,7 @@
     <div>{message}</div>
     <div class="text-gray-600 text-xs"
     class:text-right={isUser}
-    >21:53</div>
+    class:ml-2={isUser}
+    class:mr-2={!isUser}
+    >{time}</div>
 </div>
