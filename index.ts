@@ -1,5 +1,8 @@
 import { WebSocketServer, WebSocket } from "ws";
 
+const express = require('express');
+const app = express();
+
 // Generate a random Key 
 function generateKey(): string {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
@@ -9,10 +12,18 @@ interface Client extends WebSocket {
     key?: string;
 }
 
-// Create a new websocket server
-const wss = new WebSocketServer({ port: 8080 });
+const wss = new WebSocketServer({noServer: true});
 
-
+app.use('/',express.static('public'));
+const server = app.listen(8000);
+server.on('upgrade', (request, socket, head) => {
+    if(request.url === '/chat') {
+        wss.handleUpgrade(request,socket,head, function done(ws){
+            wss.emit('connection', ws, request);
+        });
+    }
+});
+    
 const Users: Map<string, Client> = new Map();           // A map of all connected users
 const Queue: string[] = [];                             // A queue of all users that are waiting for a match
 const ChatPartner = new Map<string, string>();          // A map of the Key of the client and the key of the partner
