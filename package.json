@@ -30,6 +30,7 @@
   "dependencies": {
     "@types/node": "^17.0.8",
     "@types/ws": "^8.2.2",
+    "express": "^4.17.2",
     "ws": "^8.4.0"
   },
   "devDependencies": {
