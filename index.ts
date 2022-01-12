@@ -14,8 +14,17 @@ interface Client extends WebSocket {
 
 const wss = new WebSocketServer({noServer: true});
 
+const port = process.env.PORT || 8000;
+function forceHTTPS(req,res,next){
+    if(!req.secure && req.get('X-Forwarded-Proto') !== 'https' && process.env.NODE_ENV !== 'development'){
+        return res.redirect('https://'+req.get('host')+req.url);
+    }
+    next();
+}
 app.use('/',express.static('public'));
-const server = app.listen((process.env.PORT || 8000));
+const server = app.listen((process.env.PORT || 8000),()=>{
+    console.log('Listening on port ' + port);
+});
 server.on('upgrade', (request, socket, head) => {
     if(request.url === '/chat') {
         wss.handleUpgrade(request,socket,head, function done(ws){
