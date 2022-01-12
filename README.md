@@ -3,6 +3,7 @@ This is a very simple Omegle clone (Or at least an attempt).
 Written in Typescript. (Svelte files contains JS).
 
 ### TODO
+- [x] Make PWA
 - [ ] Add helpful messages to handle errors
 - [ ] Add E2EE
 - [ ] Make the server more secure
@@ -15,14 +16,14 @@ After cloning the repo,
 - Generate the tailwind css file using _(read note 1)_  `npm run css`
 - Generate index.js using _(read note 2)_  `tsc`
 - Start svelte dev server _(read note 3)_  `npm run dev`
-- Run the WebSocket server using  `node index.js`
+- Start nodemon  `npx nodemon index.js`
 - Dev server starts on  `localhost:8000`
 
 ### How to build the release version
  After cloning the repo,
  - Make sure dependencies are installed, if not  `npm install`
- 
- Quickly build the release version using  `npm run build`
+ - Quickly build the release version using  `npm run build`
+ - Start serving by using `npm run start`
 
  Or use the following command to build the release version step by step
 
