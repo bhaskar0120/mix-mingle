@@ -15,7 +15,7 @@ interface Client extends WebSocket {
 const wss = new WebSocketServer({noServer: true});
 
 app.use('/',express.static('public'));
-const server = app.listen(8000);
+const server = app.listen((process.env.PORT || 8000));
 server.on('upgrade', (request, socket, head) => {
     if(request.url === '/chat') {
         wss.handleUpgrade(request,socket,head, function done(ws){
