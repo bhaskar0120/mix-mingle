@@ -9,12 +9,6 @@
     "description": "Chat with stranger",
     "icons": [
         {
-            "src": "/static/maskable_icon_x512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable"
-        },
-        {
             "src": "/static/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
@@ -32,7 +26,9 @@
         {
             "src": "/static/icon-512x512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
+
         }
     ]
 }
