@@ -32,7 +32,7 @@
 
     let textValue = "";
 
-    const ws = new WebSocket("ws://localhost:8000/chat");
+    const ws = new WebSocket("ws://mix-mingle.herokuapp.com/chat");
 
     //Push message to the array
     function send(){
